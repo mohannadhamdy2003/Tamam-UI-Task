@@ -512,9 +512,8 @@ section {
   .news-modal-content {
     position: fixed;
     bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 904px;
+    width: 100vw;
+    height: 90vh;
     border-radius: 16px 16px 0 0;
     flex-direction: column;
     overflow: auto;
