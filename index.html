@@ -1,20 +1,273 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Card Listing</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="UI developer technical task - card listing page with side popup overlay built using Bootstrap and vanilla JavaScript." />
+<!doctype html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tamam-UI-Task</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="UI developer technical task - card listing page with side popup overlay built using Bootstrap and vanilla JavaScript."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-p9Y...snip..."
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      
+      <div class="topbar">
+        <div
+          class="container-fluid d-flex justify-content-between align-items-md-center flex-column flex-md-row px-2"
+        >
+          <!-- Info Section -->
+          <div class="d-flex align-items-start gap-2 flex-wrap py-2">
+            <div class="country-info d-flex align-items-center gap-2">
+              <img src="./assets/images/saudi-flag.svg" alt="Saudi Flag" />
+              <p class="fs-14 fw-medium">
+                موقع حكومي رسمي تابع لحكومة المملكة العربية السعودية
+              </p>
+            </div>
+            <span class="verification-link fs-14 fw-normal"
+              >كيفية التحقق <i class="fa-solid fa-angle-down"></i
+            ></span>
+          </div>
 
-  <!-- Bootstrap CSS layer -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <!-- My CSS -->
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-  <!-- Bootstrap JS layer -->
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <!-- my JS -->
-  <script src="js/main.js"></script>
-</body>
+          <!-- Date & Location -->
+          <div class="d-flex gap-3 py-1 mob">
+            <p class="">
+              <i class="fa-regular fa-calendar ms-1"></i>
+              <time datetime="2026-02-11">11-فبراير-2026</time>
+            </p>
+            <p class=""><i class="fa-solid fa-location-dot ms-1"></i> الرياض</p>
+          </div>
+        </div>
+      </div>
+
+      <nav
+        class="container-fluid d-flex justify-content-xl-between align-items-center border-bottom"
+      >
+        
+        <div class="d-flex gap-3 align-items-center">
+          <a href="#" class="d-none d-xl-block">
+            <img
+              src="./assets/images/logo.svg"
+              alt="main logo"
+              class="main-logo"
+            />
+          </a>
+
+          <ul
+            class="h-full d-none d-xl-flex align-items-stretch list-unstyled mb-0"
+          >
+            <li>
+              <a
+                href="#"
+                class="nav-link fw-medium h-full px-3 d-flex align-items-center justify-content-center gap-1"
+                >عن المركز<i class="fa-solid fa-angle-down"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="nav-link fw-medium h-full px-3 d-flex align-items-center justify-content-center gap-1"
+                >برامج الاصدارات<i class="fa-solid fa-angle-down"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="nav-link fw-medium h-full px-3 d-flex align-items-center justify-content-center gap-1"
+                >المستثمرون <i class="fa-solid fa-angle-down"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="nav-link fw-medium h-full px-3 d-flex align-items-center justify-content-center gap-1"
+                >المتعاملين الأولين
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="nav-link fw-medium h-full px-3 d-flex align-items-center justify-content-center gap-1"
+                >المركز الإعلامي <i class="fa-solid fa-angle-down"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="nav-link fw-medium h-full px-3 d-flex align-items-center justify-content-center gap-1 active"
+                >المركز الإعلامي <i class="fa-solid fa-angle-down"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="nav-link fw-medium h-full px-3 d-flex align-items-center justify-content-center gap-1"
+              >
+                صح (صكوك حكومية)</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        
+        <div class="h-full d-none d-xl-flex align-items-stretch gap-2">
+          <button class="btn-action d-flex align-items-center gap-1 fw-medium">
+            <i class="fa-solid fa-magnifying-glass"></i> بحث
+          </button>
+          <button
+            class="btn-action d-flex align-items-center gap-1 lang fw-medium"
+          >
+            <img
+              src="./assets/images/language.svg"
+              alt="Language Icon"
+              class="lang-icon"
+            />
+            English
+          </button>
+        </div>
+
+        
+        
+        <button class="d-block d-xl-none border-0 bg-white">
+          <i class="fa-solid fa-bars fs-24"></i>
+        </button>
+        <a href="#" class="d-block d-xl-none m-auto mobile-logo">
+          <img
+            src="./assets/images/mobile.svg"
+            alt="Mobile Logo"
+            class="mobile-logo-img"
+          />
+        </a>
+
+       
+      </nav>
+    </header>
+    <main>
+
+      
+      <section class="section-header">
+        <div class="container-fluid px-3">
+          <div class="section-1">
+            <a href="#" class="section-1-link ">الرئيسية</a>
+            <i class="fa-solid fa-angle-left"></i>
+            <a href="#" class="section-1-link">المركز الإعلامي</a>
+            <i class="fa-solid fa-angle-left"></i>
+            <a href="#" class="section-1-link-last">الاخبار والبيانات الصحفية</a>
+          </div>
+          <h1 class="section-title">الاخبار والبيانات الصحفية</h1>  
+        </div>
+      </section>
+      <section class="py-5">
+        <div class="container px-4">
+          <form class="row mb-4 align-items-start justify-content-between">
+            
+            <div class="col-auto order-2 order-md-1">
+              <label class="d-block mb-2 fw-medium text-muted" style="font-size: 13px;">عنوان القسم</label>
+            
+              <div class="search-wrapper ">
+                <i class="fa fa-search icon-right"></i>
+            
+                <input 
+                  type="text" 
+                  class="form-control search-input" 
+                  placeholder="ابحث باسم القسم" 
+                />
+            
+                <i class="fa fa-microphone icon-left"></i>
+              </div>
+            </div>
+            
+            <div class="col-auto order-1 order-md-2">
+              <label class="d-block mb-2 fw-medium text-muted" style="font-size: 13px;">ترتيب حسب</label>
+              <select class="form-select" style="width: 160px;">
+                <option>الأحدث</option>
+                <option>الأقدم</option>
+              </select>
+            </div>
+            
+          </form>
+          <div class="row g-3 mb-5" id="cards"></div>
+          <nav class="custom-pagination">
+            <ul class="custom-pagination__list">
+          
+              <li class="custom-pagination__item">
+                <a href="#" class="custom-pagination__link custom-pagination__arrow">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </a>
+              </li>
+          
+              <li class="custom-pagination__item">
+                <a href="#" class="custom-pagination__link">999</a>
+              </li>
+          
+              <li class="custom-pagination__item">
+                <span class="custom-pagination__dots">...</span>
+              </li>
+          
+              <li class="custom-pagination__item">
+                <a href="#" class="custom-pagination__link">3</a>
+              </li>
+          
+              <li class="custom-pagination__item">
+                <a href="#" class="custom-pagination__link">2</a>
+              </li>
+          
+              <li class="custom-pagination__item">
+                <a href="#" class="custom-pagination__link is-active">1</a>
+              </li>
+          
+              <li class="custom-pagination__item">
+                <a href="#" class="custom-pagination__link custom-pagination__arrow">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </a>
+              </li>
+          
+            </ul>
+          </nav>
+        </div>
+      </section>
+      <div id="newsModal" class="news-modal">
+        <div class="news-modal-overlay"></div>
+      
+        <div class="news-modal-content">
+          <button class="news-modal-close"><i class="fa-solid fa-x"></i></button>
+      
+          <div class="news-modal-image">
+            <img id="modalImage" src="" alt="">
+          </div>
+      
+          <div class="news-modal-body">
+            <h3 id="modalTitle"></h3>
+            <p id="modalDate"></p>
+            <div id="modalText"></div>
+          </div>
+        </div>
+      </div>
+
+
+      
+
+
+
+    </main>
+    <!-- Bootstrap JS layer -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- my JS -->
+    <script src="./js/main.js"></script>
+  </body>
 </html>
