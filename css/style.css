@@ -521,7 +521,18 @@ section {
     transform: translateY(100%);
     transition: transform 0.3s ease-in-out;
   }
+  .news-modal-image {
+    width: 100%;
+    height: 40vh;  
+    flex-shrink: 0;
+    position: relative;
+  }
 
+  .news-modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  
+  }
   .news-modal.active .news-modal-content {
     transform: translateY(0);
   }
